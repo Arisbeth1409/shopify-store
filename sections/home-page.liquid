@@ -1,0 +1,168 @@
+<link rel="stylesheet" href="{{ 'home-page.css' | asset_url }}">
+
+<main class="home-page">
+  {% for block in section.blocks %}
+    {% case block.type %}
+      {% when 'hero' %}
+        <section
+          class="hero-section"
+          style="background-image: url('{{ block.settings.image | image_url: width: 1400  }}');"
+        >
+          <div class="hero-section__content">
+            <h2 class="hero-section__title">
+              {{ block.settings.title }}
+              <span class="hero-section__title--highlight">{{ block.settings.highlight }}</span>
+            </h2>
+            <p class="hero-section__text">{{ block.settings.subtitle }}</p>
+            <a class="hero-section__button" href="{{ block.settings.cta_link }}" class="button">
+              {{- block.settings.cta_text -}}
+            </a>
+          </div>
+        </section>
+      {% when 'news' %}
+        <section class="news">
+          <div class="news__content">
+            <div class="news__tag">
+              <span class="news__tag-text">{{ block.settings.news_tag }}</span>
+            </div>
+            <div class="news__details">
+              <h2 class="news__title">{{ block.settings.news_title }}</h2>
+              <div class="news__cta">
+                <p class="news__subtitle">{{ block.settings.news_subtitle }}</p>
+                <a href="{{ block.settings.news_button_link }}" class="news__button">
+                  {{ block.settings.news_button_text }}
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="slider-container">
+          <div class="slider-container__item--top">{% render 'slick-slider' %}</div>
+          <div class="slider-container__item--bottom">{% render 'slick-slider-images' %}</div>
+        </section>
+      {% when 'image-banner' %}
+        <section class="banner-bottom">
+          <image
+            class="banner-bottom__image"
+            src="{{ block.settings.image-banner | image_url: width: 1400 }}"
+            alt="{{ block.settings.image-banner.alt }}"
+          />
+        </section>
+    {% endcase %}
+  {% endfor %}
+</main>
+
+{% schema %}
+{
+  "name": "Home Page",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "hero",
+      "name": "Hero Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Background Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        },
+        {
+          "type": "text",
+          "id": "highlight",
+          "label": "highlight"
+        },
+        {
+          "type": "url",
+          "id": "cta_link",
+          "label": "Button Link"
+        },
+        {
+          "type": "text",
+          "id": "cta_text",
+          "label": "Button Text"
+        }
+      ]
+    },
+    {
+      "type": "news",
+      "name": "News Section",
+      "settings": [
+        {
+          "type": "text",
+          "id": "news_tag",
+          "label": "Etiqueta",
+          "default": "TENNIS"
+        },
+        {
+          "type": "text",
+          "id": "news_title",
+          "label": "Título",
+          "default": "Raquetas. Accesorios. Pelotas."
+        },
+        {
+          "type": "textarea",
+          "id": "news_subtitle",
+          "label": "Subtítulo",
+          "default": "Conoce nuestras raquetas y aprende a jugar Tennis como un profesional."
+        },
+        {
+          "type": "text",
+          "id": "news_button_text",
+          "label": "Texto del Botón",
+          "default": "HISTORIA"
+        },
+        {
+          "type": "url",
+          "id": "news_button_link",
+          "label": "Enlace del Botón",
+          "default": "/"
+        }
+      ]
+    },
+    {
+      "type": "image-banner",
+      "name": "Image Banner Section",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image-banner",
+          "label": "Image banner"
+        },
+        {
+          "type": "text",
+          "id": "image_alt",
+          "label": "Texto alternativo de la imagen",
+          "default": "Banner inferior"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Imagen del Slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Imagen",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home Page",
+      "category": "Home Pages"
+    }
+  ]
+}
+{% endschema %}

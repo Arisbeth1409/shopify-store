@@ -1,0 +1,21 @@
+<div class="images-slider">
+  <image src="{{ 'new_banner.png' | asset_url }}" alt="Banner" />
+  <image src="{{ 'new_banner.png' | asset_url }}" alt="Banner" />
+  <image src="{{ 'new_banner.png' | asset_url }}" alt="Banner" />
+  <image src="{{ 'new_banner.png' | asset_url }}" alt="Banner" />
+</div>
+
+<script>
+  $(document).ready(function () {
+    $('.images-slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      arrows: true,
+    });
+  });
+</script>

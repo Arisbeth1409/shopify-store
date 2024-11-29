@@ -1,0 +1,60 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero-section": {
+      "type": "home-page",
+      "blocks": {
+        "hero_4XXGC3": {
+          "type": "hero",
+          "settings": {
+            "image": "shopify://shop_images/group_2x_650cb115-d81e-4f23-8173-2012eb5245f2.jpg",
+            "title": "Las mejores raquetas para jugar",
+            "subtitle": "",
+            "highlight": "Tennis",
+            "cta_link": "",
+            "cta_text": "ACERCA DE NOSOTROS"
+          }
+        },
+        "news_THEHUK": {
+          "type": "news",
+          "settings": {
+            "news_tag": "TENNIS",
+            "news_title": "Raquetas. Accesorios. Pelotas.",
+            "news_subtitle": "Conoce nuestras raquetas y aprende a jugar Tennis como un profesional.",
+            "news_button_text": "HISTORIA",
+            "news_button_link": "/"
+          }
+        },
+        "image_Jd6x7Q": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/ball-color-court-1405355_2x_ac8dd0de-5b6a-4f27-b225-d5e0fca521d6.jpg"
+          }
+        },
+        "image_banner_tk3gJz": {
+          "type": "image-banner",
+          "settings": {
+            "image-banner": "shopify://shop_images/banner-bottom.png",
+            "image_alt": "Banner inferior"
+          }
+        }
+      },
+      "block_order": [
+        "hero_4XXGC3",
+        "news_THEHUK",
+        "image_Jd6x7Q",
+        "image_banner_tk3gJz"
+      ],
+      "settings": {}
+    }
+  },
+  "order": ["hero-section"]
+}
